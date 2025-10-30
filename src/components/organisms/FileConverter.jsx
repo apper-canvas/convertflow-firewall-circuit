@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import FileUploadZone from "@/components/molecules/FileUploadZone";
 import FileInfoCard from "@/components/molecules/FileInfoCard";
+import PreviewPanel from "@/components/molecules/PreviewPanel";
 import FormatSelector from "@/components/molecules/FormatSelector";
 import ConversionProgress from "@/components/molecules/ConversionProgress";
 import DownloadButton from "@/components/molecules/DownloadButton";
@@ -108,8 +109,10 @@ const FileConverter = () => {
           disabled={isConverting}
         />
       ) : (
-        <div className="space-y-6">
+<div className="space-y-6">
           <FileInfoCard file={selectedFile} />
+
+          <PreviewPanel file={selectedFile} />
           
           <FormatSelector
             value={targetFormat}
